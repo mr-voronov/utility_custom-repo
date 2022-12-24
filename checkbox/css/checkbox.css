@@ -1,0 +1,68 @@
+:root {
+    --color-bg: #fff;
+    --color-bg-hover: #eee;
+    --color-bg-checked: #009bff;
+    --color-brd: #009bff;
+    --color-check-mark: #fff;
+    --size-font: 18px;
+    --size-checkbox: 24px;
+    --border: 1px solid var(--color-brd);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    text-align: center;
+}
+
+.c-checkbox {
+    padding-left: calc(var(--size-checkbox) + 5px);
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size-font);
+}
+
+.c-checkbox__input-hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.c-checkbox__input-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size-checkbox);
+    height: var(--size-checkbox);
+    border-radius: 5px;
+    border: var(--border);
+    background-color: var(--color-bg);
+    /* transition */
+}
+
+.c-checkbox__input-custom::after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--color-check-mark);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.c-checkbox:hover .c-checkbox__input-custom {
+    background-color: var(--color-bg-hover);
+}
+
+.c-checkbox__input-hidden:checked ~ .c-checkbox__input-custom {
+    background-color: var(--color-bg-checked);
+}
+
+.c-checkbox__input-hidden:checked ~ .c-checkbox__input-custom::after {
+    display: block;
+}

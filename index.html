@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select (Dropdown)</title>
+    <!-- general -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- dropdown -->
+    <link rel="stylesheet" href="./dropdown/css/dropdown.css">
+    <!-- checkbox -->
+    <link rel="stylesheet" href="./checkbox/css/checkbox.css">
+</head>
+<body>
+    <div class="u-container--main">
+        <!-- dropdown added by js -->
+        <div class="js-dropdown-root"></div>
+
+        <!-- checkbox -->
+        <label for="checkbox" class="c-checkbox">
+            <input type="checkbox" name="" id="checkbox" class="c-checkbox__input-hidden">
+            <span class="c-checkbox__input-custom"></span>
+            <span>I agree to terms</span>
+        </label>
+    </div>
+
+    <!-- dropdown -->
+    <script src="./dropdown/data/users.js"></script>
+    <script src="./dropdown/script/dropdown.js"></script>
+</body>
+</html>
